@@ -402,10 +402,6 @@
     }
     .li svg{ width:18px; height:18px; margin-top:1px; flex: 0 0 auto; color: rgba(52,211,153,.95); }
 
-    /* Testimonials */
-    .stars{ display:flex; gap:3px; }
-    .stars svg{ width:14px; height:14px; color: rgba(52,211,153,.95); }
-
     /* FAQ */
     details{
       border-radius: var(--radius);
@@ -898,8 +894,12 @@
 
       <div class="grid cols-3">
         <div class="card reveal">
-          <div class="stars" aria-label="5 stars">
-            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg>
+          <div class="stars" aria-label="5 stars" style="display:flex; gap:3px;">
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
           </div>
           <h3 style="margin-top:10px;">“Tours went up within a month.”</h3>
           <p>“The posts finally look consistent, and parents DM us with specific questions—exactly what we wanted.”</p>
@@ -907,8 +907,12 @@
         </div>
 
         <div class="card reveal">
-          <div class="stars" aria-label="5 stars">
-            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg>
+          <div class="stars" aria-label="5 stars" style="display:flex; gap:3px;">
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
           </div>
           <h3 style="margin-top:10px;">“We look so much more professional.”</h3>
           <p>“They captured our classroom vibe without feeling staged. Parents comment about how welcoming it feels.”</p>
@@ -916,8 +920,12 @@
         </div>
 
         <div class="card reveal">
-          <div class="stars" aria-label="5 stars">
-            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg>
+          <div class="stars" aria-label="5 stars" style="display:flex; gap:3px;">
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
+            <svg style="width:14px;height:14px;color:rgba(52,211,153,.95)"><use href="#i-star"></use></svg>
           </div>
           <h3 style="margin-top:10px;">“The content calendar is a lifesaver.”</h3>
           <p>“No more last-minute posts. Approvals take 10 minutes, and everything stays on brand.”</p>
@@ -1026,9 +1034,10 @@
       <div class="contact">
         <div class="card reveal">
           <h3 style="margin:0 0 8px;">Request a free audit</h3>
-          <p style="margin:0;color:var(--muted);">This form is front-end only. Connect it to your email/CRM later.</p>
+          <p style="margin:0;color:var(--muted);">This form is connected to Formspree.</p>
 
-          <form id="leadForm" style="margin-top:10px;">
+          <!-- ✅ FORM: Connected to Formspree -->
+          <form id="leadForm" action="https://formspree.io/f/mlgedjwq" method="POST" style="margin-top:10px;">
             <label for="name">Your name</label>
             <input id="name" name="name" placeholder="Alex Johnson" required />
 
@@ -1040,6 +1049,12 @@
 
             <label for="message">What do you want to improve?</label>
             <textarea id="message" name="message" placeholder="More tours, consistent posting, better photos/captions, etc." required></textarea>
+
+            <!-- Optional: email subject inside Formspree inbox -->
+            <input type="hidden" name="_subject" value="New Early Bloom Media Lead (Audit Request)" />
+
+            <!-- Optional: spam honeypot -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center;">
               <button class="btn primary" type="submit">
@@ -1147,19 +1162,17 @@
     }, { threshold: 0.14 });
     els.forEach(el => io.observe(el));
 
-    // Fake form submit (front-end only)
+    // Optional: show a friendly message, but DO NOT prevent the actual submit.
+    // Formspree will redirect to its default thank-you page unless you configure a redirect.
     const form = document.getElementById('leadForm');
     const status = document.getElementById('formStatus');
 
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
+    form?.addEventListener('submit', () => {
       status.style.display = 'inline-flex';
-      status.textContent = 'Sent! We’ll reach out soon.';
-      status.style.borderColor = 'rgba(52,211,153,.35)';
-      status.style.background = 'rgba(52,211,153,.12)';
-      status.style.color = 'rgba(229,255,245,.92)';
-      form.reset();
-      setTimeout(() => { status.style.display = 'none'; }, 6000);
+      status.textContent = 'Sending...';
+      status.style.borderColor = 'rgba(255,255,255,.18)';
+      status.style.background = 'rgba(255,255,255,.06)';
+      status.style.color = 'rgba(255,255,255,.82)';
     });
 
     // Footer year
