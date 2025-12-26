@@ -2,405 +2,1168 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Early Bloom Media | Childcare Marketing That Fills Classrooms</title>
-  <meta name="description" content="Early Bloom Media helps daycare and childcare centers grow with social media, ads, and enrollment-focused content—more tours, more enrollments, less stress." />
-  <meta property="og:title" content="Early Bloom Media" />
-  <meta property="og:description" content="Childcare marketing that fills classrooms." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo.png" />
-  <link rel="icon" href="assets/logo.png" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Early Bloom Media | Social Media Marketing for Daycares</title>
+  <meta name="description" content="Early Bloom Media helps daycares and early learning centers grow enrollment with warm, parent-friendly social media content." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <a class="skip" href="#main">Skip to content</a>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <header class="header" id="top">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Early Bloom Media Home">
-        <img src="assets/logo.png" alt="Early Bloom Media logo" class="brand-logo" />
-        <span class="brand-name">Early Bloom <span class="brand-sub">Media</span></span>
+  <style>
+    :root{
+      --bg:#070a0f;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --line: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.7);
+      --muted2: rgba(255,255,255,.58);
+      --accent: #34d399; /* emerald */
+      --accent2:#22c55e;
+      --accent3:#14b8a6; /* teal */
+      --shadow: 0 20px 50px rgba(0,0,0,.35);
+      --radius: 22px;
+      --radius2: 16px;
+      --max: 1100px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(900px 500px at 15% 0%, rgba(52,211,153,.18), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(20,184,166,.16), transparent 60%),
+                  linear-gradient(180deg, #070a0f, #070a0f 40%, #05070b);
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), 92vw); margin-inline:auto; }
+
+    /* Top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7,10,15,.75), rgba(7,10,15,.45));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 220px;
+    }
+    .mark{
+      width:38px; height:38px;
+      border-radius: 16px;
+      position:relative;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.16);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset;
+      overflow:hidden;
+    }
+    .mark::before{
+      content:"";
+      position:absolute; inset:-18px;
+      background: conic-gradient(from 120deg, rgba(52,211,153,.0), rgba(52,211,153,.55), rgba(20,184,166,.45), rgba(52,211,153,.0));
+      filter: blur(14px);
+      opacity:.9;
+      animation: spin 10s linear infinite;
+    }
+    @keyframes spin{ to{ transform:rotate(360deg);} }
+    .mark svg{ position:relative; width:18px; height:18px; }
+    .brand .name{ font-weight:700; letter-spacing:-.02em; font-size:14px; line-height:1.1; }
+    .brand .tag{ font-size:12px; color:var(--muted2); margin-top:2px; }
+
+    .links{ display:none; gap:18px; align-items:center; }
+    .links a{
+      font-size:14px; color:var(--muted);
+      padding:8px 10px;
+      border-radius: 999px;
+      transition: .2s;
+    }
+    .links a:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+
+    .nav-actions{ display:flex; align-items:center; gap:10px; margin-left:auto; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      font-weight:600;
+      font-size:14px;
+      padding:11px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      cursor:pointer;
+      transition:.2s transform, .2s background, .2s border-color;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22); transform: translateY(-1px); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(52,211,153,.95), rgba(20,184,166,.9));
+      border-color: rgba(255,255,255,.18);
+      color:#052015;
+    }
+    .btn.primary:hover{ transform: translateY(-1px) scale(1.01); }
+
+    .burger{
+      width:44px; height:44px; border-radius:999px;
+      display:inline-grid; place-items:center;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      cursor:pointer;
+    }
+    .burger span{
+      width:18px; height:2px; background: rgba(255,255,255,.85);
+      position:relative; display:block;
+    }
+    .burger span::before,.burger span::after{
+      content:""; position:absolute; left:0; width:18px; height:2px;
+      background: rgba(255,255,255,.85);
+    }
+    .burger span::before{ top:-6px; }
+    .burger span::after{ top:6px; }
+
+    /* Mobile menu */
+    .mobile{
+      display:none;
+      padding: 10px 0 16px;
+    }
+    .mobile a{
+      display:block;
+      padding:12px 10px;
+      border-radius: 14px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      margin-top:8px;
+    }
+    .mobile a:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+
+    /* Hero */
+    .hero{
+      padding: 54px 0 24px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 26px;
+      align-items:stretch;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:12px;
+      color: rgba(229,255,245,.9);
+      border:1px solid rgba(52,211,153,.25);
+      background: rgba(52,211,153,.12);
+      padding:8px 12px;
+      border-radius:999px;
+      margin-bottom:16px;
+    }
+    .kicker svg{ width:16px; height:16px; }
+    h1{
+      font-size: clamp(34px, 4.5vw, 54px);
+      line-height: 1.04;
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+    }
+    .lead{
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin: 0 0 22px;
+      max-width: 62ch;
+    }
+    .hero-cta{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+      margin-bottom: 22px;
+    }
+    .mini{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 8px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color: rgba(255,255,255,.78);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .pill svg{ width:14px; height:14px; opacity:.9; }
+
+    .hero-card{
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:-120px -60px auto auto;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(52,211,153,.42), rgba(20,184,166,.10) 55%, transparent 70%);
+      filter: blur(6px);
+      opacity:.85;
+      pointer-events:none;
+    }
+    .preview{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      overflow:hidden;
+    }
+    .preview-top{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+    }
+    .dots{ display:flex; gap:6px; }
+    .dot{ width:8px; height:8px; border-radius:999px; background: rgba(255,255,255,.20); }
+    .preview-body{
+      padding: 14px;
+      display:grid;
+      gap: 10px;
+    }
+    .post{
+      display:grid;
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+      align-items:center;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+    }
+    .avatar{
+      width:56px; height:56px; border-radius: 18px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(52,211,153,.9), rgba(20,184,166,.2) 60%, rgba(255,255,255,.05) 75%),
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .post strong{ font-size: 13px; letter-spacing:-.01em; }
+    .post p{ margin:6px 0 0; font-size:12px; color: rgba(255,255,255,.7); line-height:1.35; }
+    .stats-row{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .stat{
+      border-radius: 18px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 12px;
+    }
+    .stat .big{ font-weight:700; letter-spacing:-.02em; }
+    .stat .small{ font-size:12px; color: rgba(255,255,255,.7); margin-top:4px; }
+
+    /* Sections */
+    section{ padding: 72px 0; }
+    .section-head{
+      text-align:center;
+      margin-bottom: 28px;
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(52,211,153,.22);
+      background: rgba(52,211,153,.11);
+      color: rgba(229,255,245,.92);
+      margin-bottom: 12px;
+    }
+    .eyebrow svg{ width:14px; height:14px; }
+    .section-head h2{
+      margin: 0;
+      font-size: clamp(26px, 3.2vw, 40px);
+      letter-spacing:-.03em;
+    }
+    .section-head p{
+      margin: 12px auto 0;
+      max-width: 72ch;
+      color: var(--muted);
+      line-height:1.7;
+      font-size: 15px;
+    }
+
+    .grid{
+      display:grid;
+      gap: 14px;
+    }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+    .card{
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      padding: 18px;
+      position:relative;
+    }
+    .card.soft{ background: rgba(255,255,255,.04); }
+    .card h3{
+      margin: 10px 0 8px;
+      font-size: 16px;
+      letter-spacing:-.02em;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .icon{
+      width: 40px; height: 40px;
+      border-radius: 16px;
+      display:grid; place-items:center;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.14);
+    }
+    .icon svg{ width:18px; height:18px; }
+
+    /* Process */
+    .step{
+      display:flex; gap:14px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+    }
+    .step .num{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background: rgba(52,211,153,.14);
+      border:1px solid rgba(52,211,153,.25);
+      color: rgba(229,255,245,.95);
+      font-weight:700;
+      flex: 0 0 auto;
+    }
+    .step h4{ margin:0 0 6px; font-size:15px; letter-spacing:-.01em; }
+    .step p{ margin:0; color: var(--muted); font-size:14px; line-height:1.6; }
+
+    /* Pricing */
+    .price-grid .card{
+      padding: 18px;
+      overflow:hidden;
+    }
+    .price-grid .card.featured{
+      background: linear-gradient(180deg, rgba(52,211,153,.14), rgba(255,255,255,.05));
+      border-color: rgba(52,211,153,.25);
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.82);
+    }
+    .price{
+      margin-top: 12px;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing:-.03em;
+    }
+    .note{ color: var(--muted2); font-size:12px; margin-top:4px; }
+    .list{
+      margin: 14px 0 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      color: rgba(255,255,255,.78);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .li svg{ width:18px; height:18px; margin-top:1px; flex: 0 0 auto; color: rgba(52,211,153,.95); }
+
+    /* Testimonials */
+    .stars{ display:flex; gap:3px; }
+    .stars svg{ width:14px; height:14px; color: rgba(52,211,153,.95); }
+
+    /* FAQ */
+    details{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding: 14px 16px;
+    }
+    details + details{ margin-top: 10px; }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      font-weight: 700;
+      letter-spacing:-.01em;
+      font-size: 14px;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    .faq-a{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items:stretch;
+    }
+    label{
+      display:block;
+      font-size: 12px;
+      color: rgba(255,255,255,.75);
+      margin: 12px 0 6px;
+    }
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.20);
+      color: rgba(255,255,255,.92);
+      outline:none;
+      transition:.2s border-color, .2s background;
+      font: inherit;
+      font-size: 14px;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(52,211,153,.45);
+      background: rgba(0,0,0,.28);
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+    .smallprint{ color: var(--muted2); font-size: 12px; margin-top: 10px; line-height:1.55; }
+    .contact-card{
+      display:grid; gap:10px;
+    }
+    .info{
+      display:flex; gap:12px;
+      padding: 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.10);
+      align-items:flex-start;
+    }
+    .info svg{ width:18px; height:18px; margin-top:2px; opacity:.95; }
+    .info strong{ display:block; font-size: 13px; }
+    .info span{ color: var(--muted); font-size: 13px; line-height:1.5; }
+
+    /* Footer */
+    footer{
+      padding: 26px 0 40px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.65);
+      font-size: 13px;
+    }
+    .footer-inner{
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    .tiny-links{ display:flex; gap:14px; flex-wrap:wrap; }
+    .tiny-links a{ color: rgba(255,255,255,.65); }
+    .tiny-links a:hover{ color: rgba(255,255,255,.9); }
+
+    /* Responsive */
+    @media (min-width: 860px){
+      .links{ display:flex; }
+      .burger{ display:none; }
+    }
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 920px){
+      .grid.cols-3{ grid-template-columns: 1fr; }
+      .grid.cols-2{ grid-template-columns: 1fr; }
+      .contact{ grid-template-columns: 1fr; }
+      .stats-row{ grid-template-columns: 1fr; }
+    }
+
+    /* Simple reveal animation */
+    .reveal{ opacity:0; transform: translateY(14px); }
+    .reveal.show{ opacity:1; transform:none; transition: .7s ease; }
+  </style>
+</head>
+
+<body>
+  <!-- Icons (inline SVG) -->
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l1.2 6.2L20 10l-6.8 1.8L12 18l-1.2-6.2L4 10l6.8-1.8L12 2z"/>
+      <path d="M19 2l.7 3.3L23 6l-3.3.7L19 10l-.7-3.3L15 6l3.3-.7L19 2z"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 6L9 17l-5-5"/>
+    </symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 10L12 4 2 10l10 6 10-6z"/>
+      <path d="M6 12v5c0 1.1 2.7 3 6 3s6-1.9 6-3v-5"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 7h4l2-2h4l2 2h4v14H4V7z"/>
+      <circle cx="12" cy="14" r="3.5"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <path d="M16 2v4M8 2v4M3 10h18"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19V5"/>
+      <path d="M4 19h16"/>
+      <path d="M8 17v-6"/>
+      <path d="M12 17V7"/>
+      <path d="M16 17v-9"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2l8 4v6c0 5-3.5 9.4-8 10-4.5-.6-8-5-8-10V6l8-4z"/>
+      <path d="M9 12l2 2 4-5"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h13"/>
+      <path d="M13 5l7 7-7 7"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 17.3l-6.18 3.7 1.64-7.03L2 9.24l7.19-.62L12 2l2.81 6.62 7.19.62-5.46 4.73 1.64 7.03z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.1 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.86.3 1.7.54 2.5a2 2 0 0 1-.45 2.11L9.1 10.4a16 16 0 0 0 4.5 4.5l1.07-1.1a2 2 0 0 1 2.11-.45c.8.24 1.64.42 2.5.54A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16v16H4z"/>
+      <path d="M4 6l8 7 8-7"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11z"/>
+      <circle cx="12" cy="10" r="2.5"/>
+    </symbol>
+  </svg>
+
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Early Bloom Media home">
+        <div class="mark" aria-hidden="true">
+          <svg><use href="#i-sparkle"></use></svg>
+        </div>
+        <div>
+          <div class="name">Early Bloom Media</div>
+          <div class="tag">Social media for growing centers</div>
+        </div>
       </a>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
-        <span class="sr-only">Open menu</span>
-        <span class="bars" aria-hidden="true"></span>
-      </button>
-
-      <nav class="nav-links" id="nav-links">
+      <div class="links" aria-label="Primary navigation">
         <a href="#services">Services</a>
-        <a href="#results">Results</a>
-        <a href="#process">Process</a>
+        <a href="#process">How it works</a>
         <a href="#pricing">Packages</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn-small" href="#contact">Free Audit</a>
-      </nav>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-actions">
+        <a class="btn" href="#pricing">View packages</a>
+        <a class="btn primary" href="#contact">
+          Get a free audit
+          <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg>
+        </a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="wrap mobile" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#pricing">Packages</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="kicker">
+          <svg><use href="#i-cap"></use></svg>
+          <span>Built for daycares, preschools & early learning centers</span>
+        </div>
+
+        <h1>
+          Fill tours, build trust, and grow enrollment—<br />
+          with warm, parent-friendly social media.
+        </h1>
+
+        <p class="lead">
+          Early Bloom Media creates consistent, compliant, and beautiful content that showcases your
+          center’s care—so families feel confident booking a tour and saying “yes.”
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">
+            Book a discovery call
+            <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg>
+          </a>
+          <a class="btn" href="#services">See what we do</a>
+          <span class="badge" title="No long-term contracts">Month-to-month • Cancel anytime</span>
+        </div>
+
+        <div class="mini" aria-label="Highlights">
+          <span class="pill"><svg><use href="#i-camera"></use></svg> Content parents love</span>
+          <span class="pill"><svg><use href="#i-calendar"></use></svg> Consistent posting</span>
+          <span class="pill"><svg><use href="#i-shield"></use></svg> Privacy-first guidelines</span>
+        </div>
+      </div>
+
+      <div class="hero-card reveal" aria-label="Social media preview">
+        <div class="preview">
+          <div class="preview-top">
+            <div class="dots" aria-hidden="true">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+            <div>Sample content plan</div>
+          </div>
+
+          <div class="preview-body">
+            <div class="post">
+              <div class="avatar" aria-hidden="true"></div>
+              <div>
+                <strong>“Meet Ms. Ana” teacher spotlight</strong>
+                <p>Build trust with warm introductions + family-friendly captions.</p>
+              </div>
+            </div>
+
+            <div class="post">
+              <div class="avatar" aria-hidden="true" style="filter:hue-rotate(25deg)"></div>
+              <div>
+                <strong>Learning through play carousel</strong>
+                <p>Show daily routines, curriculum moments, and classroom joy.</p>
+              </div>
+            </div>
+
+            <div class="post">
+              <div class="avatar" aria-hidden="true" style="filter:hue-rotate(-18deg)"></div>
+              <div>
+                <strong>Tour CTA + enrollment reminders</strong>
+                <p>Clear next steps that turn interest into scheduled tours.</p>
+              </div>
+            </div>
+
+            <div class="stats-row" aria-label="Example outcomes">
+              <div class="stat">
+                <div class="big">+38%</div>
+                <div class="small">Profile visits</div>
+              </div>
+              <div class="stat">
+                <div class="big">2–5×</div>
+                <div class="small">DM replies</div>
+              </div>
+              <div class="stat">
+                <div class="big">Weekly</div>
+                <div class="small">Tour prompts</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="smallprint" style="margin:12px 2px 0;">
+          *Results vary by location, season, and capacity. We focus on consistent visibility + trust-building content.
+        </p>
+      </div>
     </div>
   </header>
 
-  <main id="main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="pill">Childcare Marketing Specialists</p>
-          <h1>Fill classrooms with social media that parents trust.</h1>
-          <p class="lead">
-            Early Bloom Media helps daycare & childcare centers turn online attention into
-            <strong>tours</strong>, <strong>waitlists</strong>, and <strong>enrollments</strong>—without feeling salesy.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn" href="#contact">Get a free growth audit</a>
-            <a class="btn btn-ghost" href="#services">See how we help</a>
-          </div>
-
-          <div class="trust-row" aria-label="Trust indicators">
-            <div class="trust">
-              <span class="trust-num">2–4 wks</span>
-              <span class="trust-label">to stronger lead flow</span>
-            </div>
-            <div class="trust">
-              <span class="trust-num">Done-for-you</span>
-              <span class="trust-label">content + ads + tracking</span>
-            </div>
-            <div class="trust">
-              <span class="trust-num">Parent-first</span>
-              <span class="trust-label">messaging that builds trust</span>
-            </div>
-          </div>
-
-          <p class="micro">
-            Not a daycare? We’re focused on childcare only—because trust marketing is different.
-          </p>
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg><use href="#i-sparkle"></use></svg>
+          <span>Services</span>
         </div>
-
-        <div class="hero-card">
-          <div class="card">
-            <h3>What you’ll get in your free audit</h3>
-            <ul class="checklist">
-              <li>Enrollment funnel review (website + socials)</li>
-              <li>Quick wins to increase tours</li>
-              <li>3 content ideas tailored to your center</li>
-              <li>Local competitor snapshot</li>
-            </ul>
-            <a class="btn btn-wide" href="#contact">Request my audit</a>
-            <p class="fineprint">No pressure. If it’s not a fit, you’ll still leave with a plan.</p>
-          </div>
-          <div class="mini-badges" aria-label="Service highlights">
-            <span class="badge">Reels & content</span>
-            <span class="badge">Meta ads</span>
-            <span class="badge">Tour booking</span>
-            <span class="badge">Reviews</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="wave" aria-hidden="true"></div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-head">
-          <h2>Services built for daycare growth</h2>
-          <p>Everything we do is designed to increase tours and enrollments—while keeping your brand warm and trustworthy.</p>
-        </div>
-
-        <div class="grid3">
-          <article class="feature">
-            <div class="icon" aria-hidden="true">🌼</div>
-            <h3>Social media content</h3>
-            <p>Reels, posts, and story templates that show your classroom culture and make parents feel confident.</p>
-            <ul class="bullets">
-              <li>Monthly content plan</li>
-              <li>Parent-trust messaging</li>
-              <li>Brand-consistent design</li>
-            </ul>
-          </article>
-
-          <article class="feature">
-            <div class="icon" aria-hidden="true">📣</div>
-            <h3>Enrollment-focused ads</h3>
-            <p>Local Meta ads that generate inquiries and tour requests with clear tracking.</p>
-            <ul class="bullets">
-              <li>Lead + tour campaigns</li>
-              <li>Pixel + conversion setup</li>
-              <li>Weekly optimization</li>
-            </ul>
-          </article>
-
-          <article class="feature">
-            <div class="icon" aria-hidden="true">🧭</div>
-            <h3>Conversion & follow-up</h3>
-            <p>We strengthen the path from “found you” to “booked a tour”—so leads don’t slip away.</p>
-            <ul class="bullets">
-              <li>Landing page copy</li>
-              <li>Tour booking flow</li>
-              <li>Review + reputation boosts</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="callout">
-          <div>
-            <h3>Want a simple plan first?</h3>
-            <p>We’ll map out what to post, what to run ads for, and how to turn interest into tours.</p>
-          </div>
-          <a class="btn btn-small" href="#contact">Get the audit</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESULTS -->
-    <section class="section alt" id="results">
-      <div class="container">
-        <div class="section-head">
-          <h2>What “good” looks like</h2>
-          <p>Results vary, but these are the outcomes we optimize for from day one.</p>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="stat-num">↑ Tours</div>
-            <div class="stat-label">More qualified tour bookings</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">↓ No-shows</div>
-            <div class="stat-label">Better follow-up & reminders</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">↑ Trust</div>
-            <div class="stat-label">Better reviews + parent confidence</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">↑ Enrollments</div>
-            <div class="stat-label">A clear path to filling rooms</div>
-          </div>
-        </div>
-
-        <div class="testimonial">
-          <div class="quote">“We finally have consistent inquiries coming in—and parents mention our videos on tours.”</div>
-          <div class="quote-meta">— Childcare Director (example)</div>
-          <p class="fineprint">Replace with real testimonials as soon as you have them.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-head">
-          <h2>Simple, supportive process</h2>
-          <p>You’re busy running a center. We make marketing feel manageable.</p>
-        </div>
-
-        <ol class="steps">
-          <li>
-            <h3>Audit & strategy</h3>
-            <p>We review your website + socials and outline the fastest path to more tours.</p>
-          </li>
-          <li>
-            <h3>Build the assets</h3>
-            <p>Content themes, Reels scripts, ad creatives, and a clear booking flow.</p>
-          </li>
-          <li>
-            <h3>Launch & optimize</h3>
-            <p>Weekly check-ins, performance reporting, and continuous improvements.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- PRICING -->
-    <section class="section alt" id="pricing">
-      <div class="container">
-        <div class="section-head">
-          <h2>Packages</h2>
-          <p>These are starter packages you can publish today. Adjust pricing anytime.</p>
-        </div>
-
-        <div class="pricing">
-          <article class="price-card">
-            <h3>Seedling</h3>
-            <p class="price"><span>$</span><strong>697</strong><span>/mo</span></p>
-            <p class="muted">For centers that want consistent, trust-building content.</p>
-            <ul class="checklist">
-              <li>12 posts/mo (incl. 4 Reels)</li>
-              <li>Monthly content plan</li>
-              <li>Basic reporting</li>
-              <li>Profile optimization</li>
-            </ul>
-            <a class="btn btn-ghost btn-wide" href="#contact">Start here</a>
-          </article>
-
-          <article class="price-card featured">
-            <div class="tag">Most popular</div>
-            <h3>Bloom</h3>
-            <p class="price"><span>$</span><strong>1497</strong><span>/mo</span></p>
-            <p class="muted">Content + lead generation for more tours.</p>
-            <ul class="checklist">
-              <li>16 posts/mo (incl. 6 Reels)</li>
-              <li>Meta ads management</li>
-              <li>Landing page + booking flow</li>
-              <li>Weekly optimization + reporting</li>
-            </ul>
-            <a class="btn btn-wide" href="#contact">Request a proposal</a>
-          </article>
-
-          <article class="price-card">
-            <h3>Evergreen</h3>
-            <p class="price"><span>$</span><strong>2497</strong><span>/mo</span></p>
-            <p class="muted">Full-funnel growth for multi-location or high capacity goals.</p>
-            <ul class="checklist">
-              <li>20 posts/mo (incl. 8 Reels)</li>
-              <li>Ads + retargeting</li>
-              <li>Reputation + review system</li>
-              <li>Monthly strategy call</li>
-            </ul>
-            <a class="btn btn-ghost btn-wide" href="#contact">Talk to us</a>
-          </article>
-        </div>
-
-        <p class="fineprint center">
-          Prices shown are placeholders—swap to your actual rates anytime.
+        <h2>Everything you need to look active, caring, and professional online.</h2>
+        <p>
+          We specialize in content that reassures parents: safety, warmth, learning, and communication—without
+          feeling “salesy.”
         </p>
       </div>
-    </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-head">
-          <h2>FAQ</h2>
-          <p>Quick answers childcare directors usually ask.</p>
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <div class="icon"><svg><use href="#i-camera"></use></svg></div>
+          <h3>Content Creation</h3>
+          <p>Posts, Reels concepts, captions, and visuals designed for parents deciding where to enroll.</p>
         </div>
 
-        <div class="faq">
-          <details>
-            <summary>How fast will we see results?</summary>
-            <p>Many centers see stronger inquiries within 2–4 weeks once content and the booking path are improved. Ads can drive tour leads faster, but consistency matters.</p>
-          </details>
-          <details>
-            <summary>Do you need photos/videos from our center?</summary>
-            <p>Yes—authentic media performs best. We’ll give you a simple monthly “shot list” that staff can capture in minutes.</p>
-          </details>
-          <details>
-            <summary>Do you work with home daycares too?</summary>
-            <p>Absolutely. The messaging is slightly different, but the trust-building approach is the same.</p>
-          </details>
-          <details>
-            <summary>Can you guarantee enrollments?</summary>
-            <p>No one can ethically guarantee enrollments. What we can guarantee is an enrollment-focused system that improves inquiries, tours, and follow-up so you can fill faster.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section alt" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <h2>Request your free growth audit</h2>
-          <p>Fill this out and we’ll send a quick, personalized plan.</p>
+        <div class="card reveal">
+          <div class="icon"><svg><use href="#i-calendar"></use></svg></div>
+          <h3>Monthly Content Calendar</h3>
+          <p>Planned themes (teacher spotlights, curriculum moments, FAQs, tour CTAs) so you stay consistent.</p>
         </div>
 
-        <div class="contact-grid">
-          <form class="form card" id="auditForm">
-            <div class="row2">
-              <label>
-                Name
-                <input name="name" autocomplete="name" required placeholder="Your name" />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" autocomplete="email" required placeholder="you@domain.com" />
-              </label>
-            </div>
-
-            <label>
-              Center name
-              <input name="center" required placeholder="Your daycare/childcare center" />
-            </label>
-
-            <div class="row2">
-              <label>
-                Website
-                <input name="website" placeholder="https://..." />
-              </label>
-              <label>
-                Instagram / Facebook
-                <input name="social" placeholder="@handle or link" />
-              </label>
-            </div>
-
-            <label>
-              What do you want to improve most?
-              <select name="goal" required>
-                <option value="" selected disabled>Choose one</option>
-                <option>More tour requests</option>
-                <option>Fill open spots faster</option>
-                <option>Grow a waitlist</option>
-                <option>Improve local awareness</option>
-              </select>
-            </label>
-
-            <label>
-              Notes (optional)
-              <textarea name="notes" rows="4" placeholder="Anything we should know?"></textarea>
-            </label>
-
-            <button class="btn btn-wide" type="submit">Send request</button>
-            <p class="fineprint">
-              This demo form uses email draft output. Connect it to a form backend (Formspree/Netlify) when you’re ready.
-            </p>
-
-            <div class="toast" id="toast" role="status" aria-live="polite"></div>
-          </form>
-
-          <aside class="card side">
-            <h3>Prefer email?</h3>
-            <p>Send a quick note and include your website + socials.</p>
-            <a class="btn btn-ghost btn-wide" href="mailto:hello@earlybloommedia.com?subject=Free%20Growth%20Audit%20Request">Email Early Bloom Media</a>
-
-            <hr class="sep" />
-
-            <h3>What happens next</h3>
-            <ul class="checklist">
-              <li>We review your online presence</li>
-              <li>We send 5–10 quick wins</li>
-              <li>If you want help implementing, we propose the best-fit package</li>
-            </ul>
-          </aside>
+        <div class="card reveal">
+          <div class="icon"><svg><use href="#i-chat"></use></svg></div>
+          <h3>DM & Comment Support</h3>
+          <p>Suggested replies + quick-response templates to help families move from questions to tours.</p>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container foot">
-      <div class="foot-left">
-        <img src="assets/logo.png" alt="" class="foot-logo" />
-        <div>
-          <div class="foot-brand">Early Bloom Media</div>
-          <div class="foot-muted">Childcare marketing that fills classrooms.</div>
+        <div class="card reveal soft">
+          <div class="icon"><svg><use href="#i-chart"></use></svg></div>
+          <h3>Reporting that Makes Sense</h3>
+          <p>Simple monthly insights: what parents engaged with and what to post more (or less) of.</p>
         </div>
-      </div>
-      <div class="foot-links">
-        <a href="#services">Services</a>
-        <a href="#pricing">Packages</a>
-        <a href="#contact">Free Audit</a>
-        <a href="#top">Back to top ↑</a>
+
+        <div class="card reveal soft">
+          <div class="icon"><svg><use href="#i-shield"></use></svg></div>
+          <h3>Privacy-First Content</h3>
+          <p>Guidance on photo permissions, faces, names, and safe classroom moments aligned to your policies.</p>
+        </div>
+
+        <div class="card reveal soft">
+          <div class="icon"><svg><use href="#i-cap"></use></svg></div>
+          <h3>Local Community Visibility</h3>
+          <p>Neighborhood-friendly posts: events, partnerships, and seasonal prompts that parents share.</p>
+        </div>
       </div>
     </div>
-    <div class="container legal">
-      <small>© <span id="year"></span> Early Bloom Media. All rights reserved.</small>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg><use href="#i-sparkle"></use></svg>
+          <span>How it works</span>
+        </div>
+        <h2>Easy, light-lift marketing that fits your day-to-day.</h2>
+        <p>We keep it simple for busy directors—clear steps, fast approvals, consistent posting.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="step reveal">
+          <div class="num">1</div>
+          <div>
+            <h4>Quick audit + goals</h4>
+            <p>We review your socials, website, and competitor centers—then set priorities (tours, waitlist, open spots).</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="num">2</div>
+          <div>
+            <h4>Content plan + brand vibe</h4>
+            <p>We align your tone to parents: warm, trustworthy, and clear. You get a monthly calendar to approve.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="num">3</div>
+          <div>
+            <h4>Create, schedule, and post</h4>
+            <p>We build posts and captions, schedule them, and keep your page active—no daily scramble.</p>
+          </div>
+        </div>
+
+        <div class="step reveal">
+          <div class="num">4</div>
+          <div>
+            <h4>Optimize with insights</h4>
+            <p>Monthly check-in: what’s working, what parents ask in DMs, and which posts drive tour requests.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg><use href="#i-sparkle"></use></svg>
+          <span>Packages</span>
+        </div>
+        <h2>Choose a plan that matches your capacity and goals.</h2>
+        <p>Transparent monthly packages. Add-ons available for multiple locations or boosted ads.</p>
+      </div>
+
+      <div class="grid cols-3 price-grid">
+        <div class="card reveal">
+          <span class="badge">Sprout</span>
+          <div class="price">$499<span style="font-size:14px;font-weight:700;color:rgba(255,255,255,.65)">/mo</span></div>
+          <div class="note">Best for: staying consistent</div>
+          <ul class="list">
+            <li class="li"><svg><use href="#i-check"></use></svg> 12 posts/month (mix of photos + graphics)</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Caption writing + hashtags</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Monthly content calendar</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> 1 round of edits</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Basic reporting</li>
+          </ul>
+          <div style="margin-top:16px;">
+            <a class="btn" href="#contact">Get started</a>
+          </div>
+        </div>
+
+        <div class="card reveal featured">
+          <span class="badge">Bloom <span style="opacity:.7;">(Most popular)</span></span>
+          <div class="price">$899<span style="font-size:14px;font-weight:700;color:rgba(255,255,255,.70)">/mo</span></div>
+          <div class="note">Best for: filling tours + trust building</div>
+          <ul class="list">
+            <li class="li"><svg><use href="#i-check"></use></svg> 16 posts/month + 4 Reels concepts</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Parent-focused CTA captions (tour prompts)</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> DM reply templates (FAQs + pricing/tour flow)</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Scheduling + community engagement prompts</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Monthly optimization call (30 min)</li>
+          </ul>
+          <div style="margin-top:16px;">
+            <a class="btn primary" href="#contact">Request a proposal <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg></a>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <span class="badge">Canopy</span>
+          <div class="price">$1,499<span style="font-size:14px;font-weight:700;color:rgba(255,255,255,.65)">/mo</span></div>
+          <div class="note">Best for: multi-room / high competition</div>
+          <ul class="list">
+            <li class="li"><svg><use href="#i-check"></use></svg> 20 posts/month + 8 Reels concepts</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> On-site content day planning (remote guidance)</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Review generation prompts + reputation support</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Boosted post strategy (ad-ready creative)</li>
+            <li class="li"><svg><use href="#i-check"></use></svg> Advanced reporting + quarterly strategy</li>
+          </ul>
+          <div style="margin-top:16px;">
+            <a class="btn" href="#contact">Talk to us</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal" style="margin-top:14px;">
+        <h3 style="margin:0 0 8px;">Popular add-ons</h3>
+        <p style="margin:0 0 10px;">Mix and match based on your needs.</p>
+        <div class="mini" style="margin-top:0">
+          <span class="pill"><svg><use href="#i-check"></use></svg> Second location support</span>
+          <span class="pill"><svg><use href="#i-check"></use></svg> Event promo packs</span>
+          <span class="pill"><svg><use href="#i-check"></use></svg> New opening / waitlist launch</span>
+          <span class="pill"><svg><use href="#i-check"></use></svg> Google Business Profile posts</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg><use href="#i-sparkle"></use></svg>
+          <span>What directors say</span>
+        </div>
+        <h2>Parents noticed the difference—fast.</h2>
+        <p>Use these as placeholders or swap in real testimonials anytime.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card reveal">
+          <div class="stars" aria-label="5 stars">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg>
+          </div>
+          <h3 style="margin-top:10px;">“Tours went up within a month.”</h3>
+          <p>“The posts finally look consistent, and parents DM us with specific questions—exactly what we wanted.”</p>
+          <p style="margin-top:10px;color:rgba(255,255,255,.62);font-size:13px;">— Director, Little Oaks Preschool</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="stars" aria-label="5 stars">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg>
+          </div>
+          <h3 style="margin-top:10px;">“We look so much more professional.”</h3>
+          <p>“They captured our classroom vibe without feeling staged. Parents comment about how welcoming it feels.”</p>
+          <p style="margin-top:10px;color:rgba(255,255,255,.62);font-size:13px;">— Owner, Bright Steps Daycare</p>
+        </div>
+
+        <div class="card reveal">
+          <div class="stars" aria-label="5 stars">
+            <svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg><svg><use href="#i-star"></use></svg>
+          </div>
+          <h3 style="margin-top:10px;">“The content calendar is a lifesaver.”</h3>
+          <p>“No more last-minute posts. Approvals take 10 minutes, and everything stays on brand.”</p>
+          <p style="margin-top:10px;color:rgba(255,255,255,.62);font-size:13px;">— Admin, Meadow Lane Learning Center</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg><use href="#i-sparkle"></use></svg>
+          <span>FAQ</span>
+        </div>
+        <h2>Quick answers for busy directors.</h2>
+        <p>If you have strict photo policies, limited time, or multiple classrooms—this is built for you.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="reveal">
+          <details>
+            <summary>
+              Do you need photos of children?
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Not necessarily. We can create strong content using classroom setups, hands-on activities, teacher spotlights,
+              curriculum graphics, facility tours, and permission-safe moments.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              How much time will this take from our team?
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Typically 20–30 minutes per month for approvals. If you send occasional photo/video snippets, we handle the rest.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Can you match our brand and tone?
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Yes—warm, professional, playful, Montessori-inspired, faith-based, bilingual, or academic-focused. We align
+              to your center’s voice and parent expectations.
+            </div>
+          </details>
+        </div>
+
+        <div class="reveal">
+          <details>
+            <summary>
+              What platforms do you manage?
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Most centers focus on Facebook + Instagram. We can also support Google Business Profile posts and Nextdoor-style
+              community messaging as add-ons.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Do you run paid ads?
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              We can prepare ad-ready creative and a boosting plan. If you want full ad management, we’ll include it as a
+              custom add-on based on your location and competition.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Is this month-to-month?
+              <span aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-a">
+              Yes. Start month-to-month. If you love it, we can move to a 3–6 month plan with bonus content.
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">
+          <svg><use href="#i-sparkle"></use></svg>
+          <span>Contact</span>
+        </div>
+        <h2>Want more tours? Let’s make your socials bloom.</h2>
+        <p>Request a free mini-audit (bio, recent posts, and easy wins). We’ll reply within 1–2 business days.</p>
+      </div>
+
+      <div class="contact">
+        <div class="card reveal">
+          <h3 style="margin:0 0 8px;">Request a free audit</h3>
+          <p style="margin:0;color:var(--muted);">This form is front-end only. Connect it to your email/CRM later.</p>
+
+          <form id="leadForm" style="margin-top:10px;">
+            <label for="name">Your name</label>
+            <input id="name" name="name" placeholder="Alex Johnson" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="alex@center.com" required />
+
+            <label for="center">Center name</label>
+            <input id="center" name="center" placeholder="Sunshine Daycare" required />
+
+            <label for="message">What do you want to improve?</label>
+            <textarea id="message" name="message" placeholder="More tours, consistent posting, better photos/captions, etc." required></textarea>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center;">
+              <button class="btn primary" type="submit">
+                Send request
+                <svg style="width:16px;height:16px"><use href="#i-arrow"></use></svg>
+              </button>
+              <span class="badge" id="formStatus" style="display:none;"></span>
+            </div>
+
+            <div class="smallprint">
+              By submitting, you agree to be contacted about your request. We’ll never sell your info.
+            </div>
+          </form>
+        </div>
+
+        <div class="contact-card">
+          <div class="info reveal">
+            <svg><use href="#i-phone"></use></svg>
+            <div>
+              <strong>Phone</strong>
+              <span>(555) 123-4567<br><span style="color:rgba(255,255,255,.5)">Replace with your number</span></span>
+            </div>
+          </div>
+
+          <div class="info reveal">
+            <svg><use href="#i-mail"></use></svg>
+            <div>
+              <strong>Email</strong>
+              <span>hello@earlybloommedia.com<br><span style="color:rgba(255,255,255,.5)">Replace with your email</span></span>
+            </div>
+          </div>
+
+          <div class="info reveal">
+            <svg><use href="#i-pin"></use></svg>
+            <div>
+              <strong>Service area</strong>
+              <span>Local + nationwide (remote)<br><span style="color:rgba(255,255,255,.5)">Add your city/state</span></span>
+            </div>
+          </div>
+
+          <div class="card reveal soft">
+            <h3 style="margin:0 0 8px;">Director-friendly promise</h3>
+            <p>Fast approvals, privacy-first guidance, and a simple monthly plan that makes your center feel active and trusted online.</p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <span class="pill"><svg><use href="#i-check"></use></svg> Clear CTAs</span>
+              <span class="pill"><svg><use href="#i-check"></use></svg> Consistent brand</span>
+              <span class="pill"><svg><use href="#i-check"></use></svg> Less stress</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap footer-inner">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="mark" aria-hidden="true" style="width:34px;height:34px;border-radius:14px;">
+          <svg><use href="#i-sparkle"></use></svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:rgba(255,255,255,.88);">Early Bloom Media</div>
+          <div style="color:rgba(255,255,255,.6); font-size:12px;">© <span id="year"></span> • Grow enrollment with social media</div>
+        </div>
+      </div>
+
+      <div class="tiny-links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Packages</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    burger?.addEventListener('click', () => {
+      const open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      mobileMenu.style.display = open ? 'none' : 'block';
+    });
+
+    // Close mobile menu after click
+    mobileMenu?.querySelectorAll('a')?.forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.style.display = 'none';
+        burger.setAttribute('aria-expanded','false');
+      });
+    });
+
+    // Reveal on scroll
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    els.forEach(el => io.observe(el));
+
+    // Fake form submit (front-end only)
+    const form = document.getElementById('leadForm');
+    const status = document.getElementById('formStatus');
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      status.style.display = 'inline-flex';
+      status.textContent = 'Sent! We’ll reach out soon.';
+      status.style.borderColor = 'rgba(52,211,153,.35)';
+      status.style.background = 'rgba(52,211,153,.12)';
+      status.style.color = 'rgba(229,255,245,.92)';
+      form.reset();
+      setTimeout(() => { status.style.display = 'none'; }, 6000);
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
